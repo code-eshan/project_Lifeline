@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorMainUI"
+    android:background="@drawable/grad_bg"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="50dp"
+
+            >
+
+            <TextView
+                android:id="@+id/tvDoctorProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:text="@string/docProfile"
+                android:textColor="@color/white"
+                android:textSize="35sp"
+                app:fontFamily="@font/julius_sans_one" />
+
+            <TextView
+                android:id="@+id/tvNIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nic"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+            <EditText
+                android:id="@+id/etDocNIC"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@drawable/edit_round"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingLeft="5dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"
+                />
+
+            <TextView
+                android:id="@+id/tvDocFirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/fname"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+            <EditText
+                android:id="@+id/etDocFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@drawable/edit_round"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingLeft="5dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"
+                />
+
+            <TextView
+                android:id="@+id/tvDocLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/lname"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+            <EditText
+                android:id="@+id/etDocLastName"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@drawable/edit_round"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingLeft="5dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"
+                />
+
+            <TextView
+                android:id="@+id/tvDocContactNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/contNum"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+            <EditText
+                android:id="@+id/etDocContactNumber"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@drawable/edit_round"
+                android:ems="10"
+                android:inputType="number"
+                android:paddingLeft="5dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"
+                />
+
+            <TextView
+                android:id="@+id/tvDocAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/age"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+            <EditText
+                android:id="@+id/etDocAge"
+                android:layout_width="130dp"
+                android:layout_height="27dp"
+                android:background="@drawable/edit_round"
+                android:ems="10"
+                android:inputType="number"
+                android:paddingLeft="5dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="30dp"
+                />
+
+            <Button
+                android:id="@+id/btnUpdateDoctor"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="56dp"
+                android:layout_marginRight="56dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_round"
+                android:backgroundTint="#18648D"
+                android:drawableLeft="@drawable/update"
+                android:drawableTint="@color/white"
+                android:paddingLeft="100sp"
+                android:paddingRight="100sp"
+                android:text="@string/updateDetails"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnDeleteDoctor"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="56dp"
+                android:layout_marginRight="56dp"
+                android:layout_marginBottom="60dp"
+                android:background="@drawable/button_round"
+                android:backgroundTint="#CA1C1C"
+                android:drawableLeft="@drawable/update"
+                android:drawableTint="@color/white"
+                android:paddingLeft="100sp"
+                android:paddingRight="100sp"
+                android:text="@string/deleteAcct"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

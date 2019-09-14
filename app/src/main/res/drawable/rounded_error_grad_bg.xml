@@ -1,0 +1,13 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners android:topLeftRadius="30dp"
+        android:bottomRightRadius="30dp"></corners>
+
+    <gradient
+        android:angle="0"
+        android:endColor="@color/toastErrorStop"
+        android:startColor="@color/toastErrorStart"
+        android:type="linear" > </gradient>
+
+</shape>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "936001077909",
+    "firebase_url": "https://lifelinehospital-2726a.firebaseio.com",
+    "project_id": "lifelinehospital-2726a",
+    "storage_bucket": "lifelinehospital-2726a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936001077909:android:160fa885f5a743bc2fd19c",
+        "android_client_info": {
+          "package_name": "com.example.lifelinehospital"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936001077909-rh75i4knujrajsm0pt0mq6a4v7mocobd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lifelinehospital",
+            "certificate_hash": "1182d743a4baf514df8173c1257e5b30f44657f8"
+          }
+        },
+        {
+          "client_id": "936001077909-0tvatc8rh0q9fpcm5udohmoovsshrq0h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9oH3zYb37i_5j6enjgKDi2hXIc_D9MbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936001077909-0tvatc8rh0q9fpcm5udohmoovsshrq0h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

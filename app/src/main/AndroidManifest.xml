@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lifelinemadproject.lifelinehospital">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.lifelinemadproject.lifelinehospital.DoctorList"></activity>
+        <activity android:name="com.lifelinemadproject.lifelinehospital.RecAppointments" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.NurAppointmentList" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.DocAssignNurse" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.NurseList" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.DocAppointmentList" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.ReceptionistProfile" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.NurseProfile" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.DoctorProfile" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.MakeAppointmentUI" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.PatientProfile" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.NurseMainUI" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.DoctorMainUI" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.ReceptionistUI" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.ReceptionistRegistrationUI" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.NurseRegistrationUI" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.DoctorRegistrationUI" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.PatientRegistrationUI">
+        </activity>
+        <activity android:name="com.lifelinemadproject.lifelinehospital.RegisterNowUI" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.PatientMainUI" />
+        <activity android:name="com.lifelinemadproject.lifelinehospital.LifeLineLogin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

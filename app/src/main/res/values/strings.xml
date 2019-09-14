@@ -1,0 +1,85 @@
+<resources>
+    //LABEESHAN
+    <string name="app_name">LifeLineHospital</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login_button">Login</string>
+    <string name="user_type">User Type</string>
+    <string name="reg_button">Register Now</string>
+    <string name="register_now">Register Now</string>
+    <string name="who_you_are">Say who you are?</string>
+    <string name="patient">Patient</string>
+    <string name="not_registered_yet">Not Registered Yet?</string>
+    <string name="pat_registration">Patient Registration</string>
+    <string name="nic">NIC</string>
+    <string name="fname">First Name</string>
+    <string name="lname">Last Name</string>
+    <string name="contNum">Contact Number</string>
+    <string name="nationality">Nationality</string>
+    <string name="sex">Sex</string>
+    <string name="age">Age</string>
+    <string name="btnregister">Register</string>
+    <string name="agreementMsg1">By registering, you confirm that you accept our</string>
+    <string name="agreementMsg2">Terms of use and Privacy Policy</string>
+    <string name="welcomePatient">Welcome</string>
+    <string name="viewProfile">View Profile</string>
+    <string name="patientProblem">Problem</string>
+    <string name="selectDate">Select A Date</string>
+    <string name="viewAppointments">View Appointments</string>
+    <string name="updateDetails">Update Details</string>
+    <string name="deleteAcct">Delete Account</string>
+    <string name="patProfile">Patient Profile</string>
+    <string name="createAppointment">Create Appointment</string>
+    <string name="picktime">Pick A Time</string>
+    <string name="request_appointment">Request Appointment</string>
+
+    <string-array name="userTypes">
+        <item>Select User</item>
+        <item>Patient</item>
+        <item>Doctor</item>
+        <item>Nurse</item>
+        <item>Receptionist</item>
+    </string-array>
+
+    <string-array name="sex">
+        <item>Select Sex</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="nationality">
+        <item>Select Nationality</item>
+        <item>Sri Lankan</item>
+        <item>Other</item>
+    </string-array>
+
+
+
+    //DOCTOR
+    <string name="doctor">Doctor</string>
+    <string name="doc_registration">Doctor Registration</string>
+    <string name="staffID">Staff ID</string>
+    <string name="welcomeDoctor">Welcome Doctor</string>
+    <string name="assignNurse">Assign Nurse</string>
+    <string name="docProfile">Doctor Profile</string>
+
+    //NURSE
+    <string name="nurse">Nurse</string>
+    <string name="nurse_registration">Nurse Registration</string>
+    <string name="welcomeNurse">Welcome Nurse</string>
+    <string name="nurseList">Nurse List</string>
+    <string name="nurProfile">Nurse Profile</string>
+
+    //RECEPTIONIST
+    <string name="receptionist">Receptionist</string>
+    <string name="receptionist_registration">Receptionist Registration</string>
+    <string name="welcomeReceptionist">Welcome Receptionist</string>
+    <string name="docList">Doctors List</string>
+    <string name="recProfile">Receptionist Profile</string>
+    <string name="doctor_appointment">Appointments</string>
+    <string name="doctorList">Doctors List</string>
+
+
+</resources>
