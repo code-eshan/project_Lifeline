@@ -68,7 +68,7 @@
     //NURSE
     <string name="nurse">Nurse</string>
     <string name="nurse_registration">Nurse Registration</string>
-    <string name="welcomeNurse">Welcome Nurse</string>
+    <string name="welcomeNurse">Welcome</string>
     <string name="nurseList">Nurse List</string>
     <string name="nurProfile">Nurse Profile</string>
 

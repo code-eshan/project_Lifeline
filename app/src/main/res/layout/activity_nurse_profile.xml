@@ -10,17 +10,16 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="40dp"
             android:layout_marginLeft="32dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="50dp"
+            android:orientation="vertical"
 
             >
 
@@ -38,20 +37,20 @@
                 android:id="@+id/tvNIC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/nic"
+                android:text="@string/staffID"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
+
             <EditText
-                android:id="@+id/etNurNIC"
+                android:id="@+id/etNurStaffID"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/edit_round"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:paddingLeft="5dp"
-                android:textSize="20sp"
-                android:layout_marginBottom="20dp"
-                />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tvNurFirstName"
@@ -61,17 +60,17 @@
                 android:text="@string/fname"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
+
             <EditText
                 android:id="@+id/etNurFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/edit_round"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:paddingLeft="5dp"
-                android:textSize="20sp"
-                android:layout_marginBottom="20dp"
-                />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tvNurLastName"
@@ -81,57 +80,61 @@
                 android:text="@string/lname"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
+
             <EditText
                 android:id="@+id/etNurLastName"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/edit_round"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:paddingLeft="5dp"
-                android:textSize="20sp"
-                android:layout_marginBottom="20dp"
-                />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/tvNurContactNumber"
+                android:id="@+id/etNurUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@string/contNum"
+                android:text="User Name"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
+
             <EditText
-                android:id="@+id/etNurContactNumber"
+                android:id="@+id/etNurUserName"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/edit_round"
                 android:ems="10"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 android:paddingLeft="5dp"
-                android:textSize="20sp"
-                android:layout_marginBottom="20dp"
-                />
+                android:textSize="20sp" />
+
 
             <TextView
-                android:id="@+id/tvNurAge"
+                android:id="@+id/tvNurPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@string/age"
+                android:text="@string/password"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
+
             <EditText
-                android:id="@+id/etNurAge"
-                android:layout_width="130dp"
+                android:id="@+id/etNurPassword"
+                android:layout_width="200dp"
                 android:layout_height="27dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/edit_round"
+                android:drawableRight="@drawable/show_password"
+                android:drawableTint="@color/gradStart"
                 android:ems="10"
-                android:inputType="number"
+                android:inputType="textPassword"
                 android:paddingLeft="5dp"
-                android:textSize="20sp"
-                android:layout_marginBottom="30dp"
-                />
+                android:paddingRight="10dp"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/btnUpdateNurse"

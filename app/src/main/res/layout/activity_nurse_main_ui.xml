@@ -8,25 +8,32 @@
     tools:context=".NurseMainUI">
 
     <TextView
-        android:id="@+id/tvNurWelcomeUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/tvNur"
+        android:layout_width="182dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
         android:layout_marginTop="124dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginRight="56dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:fontFamily="@font/julius_sans_one"
         android:text="@string/welcomeNurse"
         android:textColor="@color/white"
         android:textSize="35sp"
+        android:textAlignment="center"
         app:fontFamily="@font/julius_sans_one"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnNurProfile"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="104dp"
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
         android:background="@drawable/button_round"
@@ -40,7 +47,9 @@
         android:textAllCaps="true"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNurWelcomeUser" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNurUserNAME" />
 
     <Button
         android:id="@+id/btnNurAppointments"
@@ -61,6 +70,25 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNurProfile" />
+
+    <TextView
+        android:id="@+id/tvNurUserNAME"
+        android:layout_width="218dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/username"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:fontFamily="@font/julius_sans_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNur" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
