@@ -22,7 +22,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.lifelinemadproject.lifelinehospital.Nurse.Nurse;
 import com.lifelinemadproject.lifelinehospital.Patient.Patient;
 
 public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -112,53 +111,8 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
                     else if(userTypeValue.equals("Doctor")) {
                         openDoctorMainUI();
                     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     else if(userTypeValue.equals("Nurse")) {
-
-                        ref = FirebaseDatabase.getInstance().getReference().child("Nurse");
-
-                        uName = username.getText().toString();
-                        pWord = password.getText().toString();
-
-
-                        ref.child(uName).addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                                try {
-                                    Nurse nurse = dataSnapshot.getValue(Nurse.class);
-                                    if (pWord.equals(nurse.getPassword())) {
-                                        customToastShow("Login Successful.");
-                                        openNurseMainUI();
-                                    }
-                                    else {
-                                        customToastError("Invalid Credentials.");
-                                    }
-                                }
-                                catch (NullPointerException e) {
-                                    customToastError("Nurse Record Not Found.");
-                                    clearControls();
-                                }
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                            }
-                        });
+                        openNurseMainUI();
                     }
                     else if(userTypeValue.equals("Receptionist")) {
                         openReceptionistUI();
@@ -183,7 +137,6 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
     }
     private void openNurseMainUI() {
         Intent intent = new Intent(LifeLineLogin.this,NurseMainUI.class);
-        intent.putExtra(EXTRA_MESSAGE,uName);
         startActivity(intent);
     }
 

@@ -35,12 +35,32 @@
                 app:fontFamily="@font/julius_sans_one" />
 
             <TextView
+                android:id="@+id/tvSTF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/staffID"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/etDocSTF"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edit_round"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingLeft="5dp"
+                android:textSize="20sp" />
+
+            <TextView
                 android:id="@+id/tvNIC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/nic"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
+
             <EditText
                 android:id="@+id/etDocNIC"
                 android:layout_width="match_parent"
@@ -111,26 +131,6 @@
                 android:paddingLeft="5dp"
                 android:textSize="20sp"
                 android:layout_marginBottom="20dp"
-                />
-
-            <TextView
-                android:id="@+id/tvDocAge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/age"
-                android:textColor="@color/white"
-                android:textSize="25sp" />
-            <EditText
-                android:id="@+id/etDocAge"
-                android:layout_width="130dp"
-                android:layout_height="27dp"
-                android:background="@drawable/edit_round"
-                android:ems="10"
-                android:inputType="number"
-                android:paddingLeft="5dp"
-                android:textSize="20sp"
-                android:layout_marginBottom="30dp"
                 />
 
             <Button
