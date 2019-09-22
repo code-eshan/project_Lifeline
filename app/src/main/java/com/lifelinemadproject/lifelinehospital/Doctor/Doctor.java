@@ -10,9 +10,6 @@ public class Doctor {
     private String contNum;
     private String userName;
     private String password;
-    private String nationality;
-    private String sex;
-    private Integer age;
 
     public Doctor() {
     }
@@ -69,27 +66,5 @@ public class Doctor {
         this.password = password;
     }
 
-    public String getNationality() {
-        return nationality;
-    }
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 }

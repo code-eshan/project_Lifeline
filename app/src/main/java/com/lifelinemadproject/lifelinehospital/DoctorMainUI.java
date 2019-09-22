@@ -24,8 +24,8 @@ public class DoctorMainUI extends AppCompatActivity {
         Intent intent = getIntent();
         uName = intent.getStringExtra(LifeLineLogin.EXTRA_MESSAGE);
 
-        welcomeUser = (TextView)findViewById(R.id.tvPatUserNAME);
-        welcomeUser.setText(uName);
+//        welcomeUser= (TextView)findViewById(R.id.tvDoctorRegistration);
+//        welcomeUser.setText(uName);
 
 
         Button btnDocProfile = (Button)findViewById(R.id.btnDocProfile);
@@ -64,16 +64,19 @@ public class DoctorMainUI extends AppCompatActivity {
 
     private void openAssignNurse() {
         Intent intent = new Intent(DoctorMainUI.this,DocAssignNurse.class);
+        intent.putExtra(EXTRA_USERNAME,uName);
         startActivity(intent);
     }
 
     private void openNurseList() {
         Intent intent = new Intent(DoctorMainUI.this,NurseList.class);
+        intent.putExtra(EXTRA_USERNAME,uName);
         startActivity(intent);
     }
 
     private void openViewDoctorAppointments() {
         Intent intent = new Intent(DoctorMainUI.this,DocAppointmentList.class);
+        intent.putExtra(EXTRA_USERNAME,uName);
         startActivity(intent);
     }
 

@@ -48,7 +48,7 @@ public class DoctorProfile extends AppCompatActivity {
         fname = (EditText)findViewById(R.id.etDocFirstName);
         lname = (EditText)findViewById(R.id.etDocLastName);
         contNum = (EditText)findViewById(R.id.etDocContactNumber);
-        age = (EditText)findViewById(R.id.etDocAge);
+
 
         Button btnUpdateDoctor = (Button)findViewById(R.id.btnUpdateDoctor);
         Button btnDeleteDoctor = (Button)findViewById(R.id.btnDeleteDoctor);
@@ -68,9 +68,6 @@ public class DoctorProfile extends AppCompatActivity {
                     fname.setText(doctor.getfName());
                     lname.setText(doctor.getlName());
                     contNum.setText(doctor.getContNum());
-                    age.setText(doctor.getAge().toString());
-                    nationality = doctor.getNationality();
-                    sex = doctor.getSex();
                     password = doctor.getPassword();
                 }
                 catch (Exception e) {
@@ -97,16 +94,13 @@ public class DoctorProfile extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         try {
-
+                            doctor.setStfID(stf.getText().toString().trim());
                             doctor.setUserName(uName);
                             doctor.setPassword(password);
                             doctor.setNIC(nic.getText().toString().trim());
                             doctor.setfName(fname.getText().toString().trim());
                             doctor.setlName(lname.getText().toString().trim());
                             doctor.setContNum(contNum.getText().toString().trim());
-                            doctor.setAge(Integer.parseInt(age.getText().toString().trim()));
-                            doctor.setNationality(nationality);
-                            doctor.setSex(sex);
 
                             ref = FirebaseDatabase.getInstance().getReference().child("Doctor").child(uName);
                             ref.setValue(doctor);
