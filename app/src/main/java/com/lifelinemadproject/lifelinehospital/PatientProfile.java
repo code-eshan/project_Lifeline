@@ -63,6 +63,7 @@ public class PatientProfile extends AppCompatActivity {
                     lname.setText(patient.getlName());
                     contNum.setText(patient.getContNum());
                     age.setText(patient.getAge().toString());
+
                     nationality = patient.getNationality();
                     sex = patient.getSex();
                     password = patient.getPassword();
@@ -94,11 +95,13 @@ public class PatientProfile extends AppCompatActivity {
 
                             pat.setUserName(uName);
                             pat.setPassword(password);
+
                             pat.setNIC(nic.getText().toString().trim());
                             pat.setfName(fname.getText().toString().trim());
                             pat.setlName(lname.getText().toString().trim());
                             pat.setContNum(contNum.getText().toString().trim());
                             pat.setAge(Integer.parseInt(age.getText().toString().trim()));
+
                             pat.setNationality(nationality);
                             pat.setSex(sex);
 

@@ -21,8 +21,12 @@ public class PatientMainUI extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_main_ui);
 
+
         Intent intent = getIntent();
         uName = intent.getStringExtra(LifeLineLogin.EXTRA_MESSAGE);
+
+
+
 
         welcomeUser = (TextView)findViewById(R.id.tvPatUserNAME);
         welcomeUser.setText(uName);
