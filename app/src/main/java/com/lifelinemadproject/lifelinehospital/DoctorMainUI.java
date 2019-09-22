@@ -6,13 +6,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class DoctorMainUI extends AppCompatActivity {
+
+    TextView welcomeUser;
+
+    String uName;
+
+    public static final String EXTRA_USERNAME = "username pass";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_main_ui);
+
+        Intent intent = getIntent();
+        uName = intent.getStringExtra(LifeLineLogin.EXTRA_MESSAGE);
+
+        welcomeUser = (TextView)findViewById(R.id.tvPatUserNAME);
+        welcomeUser.setText(uName);
+
 
         Button btnDocProfile = (Button)findViewById(R.id.btnDocProfile);
         Button btnViewAppointments = (Button)findViewById(R.id.btnDocAppointments);
@@ -65,6 +79,7 @@ public class DoctorMainUI extends AppCompatActivity {
 
     private void openDoctorProfile() {
         Intent intent = new Intent(DoctorMainUI.this,DoctorProfile.class);
+        intent.putExtra(EXTRA_USERNAME,uName);
         startActivity(intent);
     }
 }

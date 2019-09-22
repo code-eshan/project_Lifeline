@@ -61,7 +61,7 @@
                 android:textSize="25sp" />
 
             <EditText
-                android:id="@+id/etDocStaffID2"
+                android:id="@+id/etNIC"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
                 android:layout_marginBottom="20dp"
@@ -121,7 +121,7 @@
                 android:textSize="25sp" />
 
             <EditText
-                android:id="@+id/etDocLastName2"
+                android:id="@+id/etConNo"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
                 android:layout_marginBottom="20dp"
@@ -172,66 +172,6 @@
                 android:inputType="textPassword"
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tvDocUsername2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/age"
-                android:textColor="@color/white"
-                android:textSize="25sp" />
-
-            <EditText
-                android:id="@+id/etDocStaffID3"
-                android:layout_width="match_parent"
-                android:layout_height="27dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/edit_round"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:paddingLeft="5dp"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tvDocUsername3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/nationality"
-                android:textColor="@color/white"
-                android:textSize="25sp" />
-
-            <EditText
-                android:id="@+id/etDocStaffID4"
-                android:layout_width="match_parent"
-                android:layout_height="27dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/edit_round"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:paddingLeft="5dp"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tvDocUsername4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/sex"
-                android:textColor="@color/white"
-                android:textSize="25sp" />
-
-            <EditText
-                android:id="@+id/etDocStaffID5"
-                android:layout_width="match_parent"
-                android:layout_height="27dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/edit_round"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:paddingLeft="5dp"
                 android:textSize="20sp" />
 
             <TextView
