@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "936001077909-jtnvib7jgnug3e4qipd61khj7dtl5od9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lifelinehospital",
+            "certificate_hash": "958f420d3cda44c9c1ebfe2b5758d9d51eb9d5c9"
+          }
+        },
+        {
+          "client_id": "936001077909-176tuvf26b3pla4s9i0cavg0k3njg98f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lifelinehospital",
+            "certificate_hash": "925d80e57537510850668131eebe686993d5cc35"
+          }
+        },
+        {
           "client_id": "936001077909-rh75i4knujrajsm0pt0mq6a4v7mocobd.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
