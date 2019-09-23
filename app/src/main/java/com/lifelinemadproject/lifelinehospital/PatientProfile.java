@@ -3,9 +3,11 @@ package com.lifelinemadproject.lifelinehospital;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,6 +65,7 @@ public class PatientProfile extends AppCompatActivity {
                     lname.setText(patient.getlName());
                     contNum.setText(patient.getContNum());
                     age.setText(patient.getAge().toString());
+
                     nationality = patient.getNationality();
                     sex = patient.getSex();
                     password = patient.getPassword();
@@ -92,21 +95,30 @@ public class PatientProfile extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         try {
 
-                            pat.setUserName(uName);
-                            pat.setPassword(password);
-                            pat.setNIC(nic.getText().toString().trim());
-                            pat.setfName(fname.getText().toString().trim());
-                            pat.setlName(lname.getText().toString().trim());
-                            pat.setContNum(contNum.getText().toString().trim());
-                            pat.setAge(Integer.parseInt(age.getText().toString().trim()));
-                            pat.setNationality(nationality);
-                            pat.setSex(sex);
+                            if(TextUtils.isEmpty(nic.getText().toString()) || TextUtils.isEmpty(fname.getText().toString())
+                                    || TextUtils.isEmpty(lname.getText().toString()) || TextUtils.isEmpty(contNum.getText().toString())
+                                    || TextUtils.isEmpty(age.getText().toString())) {
+                                customToastError("Fields cannot be empty.");
+                            }
+                            else {
+                                pat.setUserName(uName);
+                                pat.setPassword(password);
 
-                            ref = FirebaseDatabase.getInstance().getReference().child("Patient").child(uName);
-                            ref.setValue(pat);
+                                pat.setNIC(nic.getText().toString().trim());
+                                pat.setfName(fname.getText().toString().trim());
+                                pat.setlName(lname.getText().toString().trim());
+                                pat.setContNum(contNum.getText().toString().trim());
+                                pat.setAge(Integer.parseInt(age.getText().toString().trim()));
 
-                            customToastShow("Update Successful.");
-                            finish();
+                                pat.setNationality(nationality);
+                                pat.setSex(sex);
+
+                                ref = FirebaseDatabase.getInstance().getReference().child("Patient").child(uName);
+                                ref.setValue(pat);
+
+                                customToastShow("Update Successful.");
+                                finish();
+                            }
 
                         }
                         catch (Exception e) {
@@ -152,6 +164,7 @@ public class PatientProfile extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void customToastShow(String message) {
