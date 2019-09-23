@@ -87,7 +87,7 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
                                 try {
                                     Patient patient = dataSnapshot.getValue(Patient.class);
                                     if (pWord.equals(patient.getPassword())) {
-                                        customToastShow("Login Successful.");
+                                        customToastShow("Successful.");
                                         openPatientMainUI();
                                     } else {
                                         customToastError("Invalid Credentials.");
