@@ -34,7 +34,7 @@
                 app:fontFamily="@font/julius_sans_one" />
 
             <TextView
-                android:id="@+id/tvNIC"
+                android:id="@+id/tvNurStaffID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/staffID"
@@ -93,7 +93,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/etNurUsername"
+                android:id="@+id/tvNurUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

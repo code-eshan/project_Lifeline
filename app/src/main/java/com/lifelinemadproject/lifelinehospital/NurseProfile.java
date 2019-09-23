@@ -24,16 +24,13 @@ import com.lifelinemadproject.lifelinehospital.Nurse.Nurse;
 
 public class NurseProfile extends AppCompatActivity {
 
-
     DatabaseReference ref;
 
     EditText sid,first,last,username,password;
 
     Nurse nur;
 
-
-   String uName ;
-
+    String uName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +48,10 @@ public class NurseProfile extends AppCompatActivity {
         username = (EditText)findViewById(R.id.etNurUserName);
         password = (EditText)findViewById(R.id.etNurPassword);
 
-
         Button btnUpdateNurse = (Button)findViewById(R.id.btnUpdateNurse);
         Button btnDeleteNurse = (Button)findViewById(R.id.btnDeleteNurse);
 
-
         ref = FirebaseDatabase.getInstance().getReference().child("Nurse");
-
-
 
         ref.child(uName).addValueEventListener(new ValueEventListener() {
             @Override
@@ -73,7 +66,8 @@ public class NurseProfile extends AppCompatActivity {
                     password.setText(nurse.getPassword());
 
                     //password = nur.getPassword();
-                    //WHY USERNAME?
+
+
                 }
                 catch (Exception e) {
                     e.printStackTrace();
@@ -89,14 +83,7 @@ public class NurseProfile extends AppCompatActivity {
         });
 
 
-
-
-
-
-
-
-
-        //UPDATE DETAILS OF NURSE
+        //UPDATE DETAILS OF PATIENT
         btnUpdateNurse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,12 +93,15 @@ public class NurseProfile extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         try {
+                                //This part
+                            nur.setUserName(uName);
+                          // nur.setPassword(password);
 
-                           nur.setSid(sid.getText().toString().trim());
-                           nur.setfName(first.getText().toString().trim());
-                           nur.setlName(last.getText().toString().trim());
-                           nur.setUserName(username.getText().toString().trim());
-                           nur.setPassword(password.getText().toString().trim());
+                            nur.setSid(sid.getText().toString().trim());
+                            nur.setfName(first.getText().toString().trim());
+                            nur.setlName(last.getText().toString().trim());
+                            nur.setUserName(username.getText().toString().trim());
+                            nur.setPassword(password.getText().toString().trim());
 
 
                             ref = FirebaseDatabase.getInstance().getReference().child("Nurse").child(uName);
@@ -133,14 +123,6 @@ public class NurseProfile extends AppCompatActivity {
                 });
             }
         });
-
-
-
-
-
-
-
-
 
         btnDeleteNurse.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,7 +154,6 @@ public class NurseProfile extends AppCompatActivity {
 
             }
         });
-
     }
 
     private void customToastShow(String message) {

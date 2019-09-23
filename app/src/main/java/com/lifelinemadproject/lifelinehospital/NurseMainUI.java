@@ -21,20 +21,20 @@ public class NurseMainUI extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nurse_main_ui);
 
+
         Intent intent = getIntent();
         uName = intent.getStringExtra(LifeLineLogin.EXTRA_MESSAGE);
 
 
-        //Accessing the Nurse Main
+
+
         welcomeUser = (TextView)findViewById(R.id.tvNurUserNAME);
         welcomeUser.setText(uName);
 
+        Button btnNurProfile = (Button)findViewById(R.id.btnNurProfile);
+        Button  btnNurseViewAppointments = (Button)findViewById(R.id.btnNurAppointments);
 
-
-        Button btnNurseProfile = (Button)findViewById(R.id.btnNurProfile);
-        Button btnNurseViewAppointments = (Button)findViewById(R.id.btnNurAppointments);
-
-        btnNurseProfile.setOnClickListener(new View.OnClickListener() {
+        btnNurProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openNurseProfile();
@@ -44,24 +44,22 @@ public class NurseMainUI extends AppCompatActivity {
         btnNurseViewAppointments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openNurseAppointmentList();
+                openNurseAppoinmentList();
             }
         });
-
     }
-
 
     private void openNurseProfile() {
         Intent intent = new Intent(NurseMainUI.this,NurseProfile.class);
+        //intent.putExtra(EXTRA_USERNAME,uName);
         intent.putExtra(EXTRA_USERNAME,uName);
         startActivity(intent);
     }
 
-    private void openNurseAppointmentList() {
+    private void openNurseAppoinmentList() {
         Intent intent = new Intent(NurseMainUI.this,NurAppointmentList.class);
+        //intent.putExtra(EXTRA_USERNAME,uName);
         intent.putExtra(EXTRA_USERNAME,uName);
         startActivity(intent);
     }
-
-
 }

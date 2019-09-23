@@ -22,7 +22,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.lifelinemadproject.lifelinehospital.Nurse.Nurse;
 import com.lifelinemadproject.lifelinehospital.Patient.Patient;
+
+import static com.lifelinemadproject.lifelinehospital.PatientMainUI.EXTRA_USERNAME;
 
 public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -59,20 +62,17 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString()) || userTypeValue.equals("NULL")) {
+                if (TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString()) || userTypeValue.equals("NULL")) {
                     if (TextUtils.isEmpty(username.getText().toString())) {
                         customToastError("Enter a username");
-                    }
-                    else if (TextUtils.isEmpty(password.getText().toString())) {
+                    } else if (TextUtils.isEmpty(password.getText().toString())) {
                         customToastError("Enter a password");
-                    }
-                    else {
+                    } else {
                         customToastError("Select a user type.");
                     }
-                }
-                else {
+                } else {
 
-                    if(userTypeValue.equals("Patient")) {
+                    if (userTypeValue.equals("Patient")) {
 
                         ref = FirebaseDatabase.getInstance().getReference().child("Patient");
 
@@ -80,44 +80,80 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
                         pWord = password.getText().toString();
 
 
-                            ref.child(uName).addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        ref.child(uName).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                                    try {
-                                        Patient patient = dataSnapshot.getValue(Patient.class);
-                                        if (pWord.equals(patient.getPassword())) {
-                                            customToastShow("Login Successful.");
-                                            openPatientMainUI();
-                                        }
-                                        else {
-                                            customToastError("Invalid Credentials.");
-                                        }
+                                try {
+                                    Patient patient = dataSnapshot.getValue(Patient.class);
+                                    if (pWord.equals(patient.getPassword())) {
+                                        customToastShow("Login Successful.");
+                                        openPatientMainUI();
+                                    } else {
+                                        customToastError("Invalid Credentials.");
                                     }
-                                    catch (NullPointerException e) {
-                                        customToastError("Patient Record Not Found.");
-                                        clearControls();
-                                    }
+                                } catch (NullPointerException e) {
+                                    customToastError("Patient Record Not Found.");
+                                    clearControls();
                                 }
+                            }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                }
-                            });
+                            }
+                        });
 
 
-                    }
-                    else if(userTypeValue.equals("Doctor")) {
+                    } else if (userTypeValue.equals("Doctor")) {
                         openDoctorMainUI();
                     }
-                    else if(userTypeValue.equals("Nurse")) {
-                        openNurseMainUI();
+
+
+
+                    else if (userTypeValue.equals("Nurse")) {
+
+
+                        ref = FirebaseDatabase.getInstance().getReference().child("Nurse");
+
+                        uName = username.getText().toString();
+                        pWord = password.getText().toString();
+
+
+                        ref.child(uName).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                try {
+                                    Nurse nurse = dataSnapshot.getValue(Nurse.class);
+                                    if (pWord.equals(nurse.getPassword())) {
+                                        customToastShow("Successful.");
+                                        openNurseMainUI();
+                                    } else {
+                                        customToastError("Invalid Credentials.");
+                                    }
+                                } catch (NullPointerException e) {
+                                    customToastError("Nurse Record Not Found.");
+                                    clearControls();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+
                     }
-                    else if(userTypeValue.equals("Receptionist")) {
+
+
+                    else if (userTypeValue.equals("Receptionist")) {
                         openReceptionistUI();
                     }
                 }
+
+
             }
         });
 
@@ -137,6 +173,7 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
     }
     private void openNurseMainUI() {
         Intent intent = new Intent(LifeLineLogin.this,NurseMainUI.class);
+        intent.putExtra(EXTRA_MESSAGE,uName);
         startActivity(intent);
     }
 
