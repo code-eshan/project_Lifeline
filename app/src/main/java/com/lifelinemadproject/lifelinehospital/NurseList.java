@@ -21,8 +21,8 @@ public class NurseList extends AppCompatActivity {
     ListView listView;
     FirebaseDatabase database;
     DatabaseReference ref;
-    ArrayList<Nurse> list;
-    ArrayAdapter<Nurse> adapter;
+    ArrayList<String> list;
+    ArrayAdapter<String> adapter;
     Nurse nurse;
 
 
@@ -37,7 +37,7 @@ public class NurseList extends AppCompatActivity {
         ref = database.getReference("Nurse");
 
         list=new ArrayList<>();
-        adapter = new ArrayAdapter<Nurse>(this,R.layout.nurse_user_info,R.id.nurse_user_info,list);
+        adapter = new ArrayAdapter<String>(this,R.layout.nurse_user_info,R.id.nurse_user_info,list);
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -45,7 +45,7 @@ public class NurseList extends AppCompatActivity {
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
                     nurse = ds.getValue(Nurse.class);
-                    list.add(nurse);
+                    list.add("ID: "+nurse.getSid() + "\n" + "Name: " +nurse.getfName().toString() + " " + nurse.getlName().toString());
                 }
                 listView.setAdapter(adapter);
             }
