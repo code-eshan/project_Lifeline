@@ -69,6 +69,11 @@ public class DoctorRegistrationUI extends AppCompatActivity {
                 startActivity(intentn);
                 //end
 
+                //Appointment list
+                Intent intentnn = new Intent(DoctorRegistrationUI.this,DocAssignNurse.class);
+                startActivity(intentnn);
+                //end
+
                 if(TextUtils.isEmpty(stf.getText().toString()) || TextUtils.isEmpty(nic.getText().toString()) || TextUtils.isEmpty(first.getText().toString().trim())
                         || TextUtils.isEmpty(last.getText().toString()) || TextUtils.isEmpty(contNum.getText().toString())
                         || TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString()))
