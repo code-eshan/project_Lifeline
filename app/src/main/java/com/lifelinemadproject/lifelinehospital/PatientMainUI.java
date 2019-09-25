@@ -31,11 +31,19 @@ public class PatientMainUI extends AppCompatActivity {
 
         Button btnPatProfile = (Button)findViewById(R.id.btnPatProfile);
         Button btnPatCreateAppointment = (Button)findViewById(R.id.btnPatMakeAppointment);
+        Button btnViewDoctorslist = (Button)findViewById(R.id.btnViewDoctorList);
 
         btnPatCreateAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openCreateAppointmentUI();
+            }
+        });
+
+        btnViewDoctorslist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDoctorsList();
             }
         });
 
@@ -47,6 +55,10 @@ public class PatientMainUI extends AppCompatActivity {
         });
     }
 
+    private void openDoctorsList() {
+        Intent intent = new Intent(PatientMainUI.this,PatDocListUI.class);
+        startActivity(intent);
+    }
     private void openCreateAppointmentUI() {
         Intent intent = new Intent(PatientMainUI.this,MakeAppointmentUI.class);
         intent.putExtra(EXTRA_USERNAME,uName);
