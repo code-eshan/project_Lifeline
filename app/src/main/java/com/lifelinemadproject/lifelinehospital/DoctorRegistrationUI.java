@@ -58,6 +58,9 @@ public class DoctorRegistrationUI extends AppCompatActivity {
         btnDocReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
                 if(TextUtils.isEmpty(stf.getText().toString()) || TextUtils.isEmpty(nic.getText().toString()) || TextUtils.isEmpty(first.getText().toString().trim())
                         || TextUtils.isEmpty(last.getText().toString()) || TextUtils.isEmpty(contNum.getText().toString())
                         || TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString()))

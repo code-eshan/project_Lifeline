@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 public class DoctorMainUI extends AppCompatActivity {
 
-    TextView welcomeUser;
+    TextView docUsername;
+
+
 
     String uName;
 
@@ -23,6 +25,8 @@ public class DoctorMainUI extends AppCompatActivity {
 
         Intent intent = getIntent();
         uName = intent.getStringExtra(LifeLineLogin.EXTRA_MESSAGE);
+        TextView username = (TextView)findViewById(R.id.tvDocUsername);
+        username.setText(uName);
 
 //        welcomeUser= (TextView)findViewById(R.id.tvDoctorRegistration);
 //        welcomeUser.setText(uName);

@@ -3,9 +3,11 @@ package com.lifelinemadproject.lifelinehospital;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -93,23 +95,30 @@ public class PatientProfile extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         try {
 
-                            pat.setUserName(uName);
-                            pat.setPassword(password);
+                            if(TextUtils.isEmpty(nic.getText().toString()) || TextUtils.isEmpty(fname.getText().toString())
+                                    || TextUtils.isEmpty(lname.getText().toString()) || TextUtils.isEmpty(contNum.getText().toString())
+                                    || TextUtils.isEmpty(age.getText().toString())) {
+                                customToastError("Fields cannot be empty.");
+                            }
+                            else {
+                                pat.setUserName(uName);
+                                pat.setPassword(password);
 
-                            pat.setNIC(nic.getText().toString().trim());
-                            pat.setfName(fname.getText().toString().trim());
-                            pat.setlName(lname.getText().toString().trim());
-                            pat.setContNum(contNum.getText().toString().trim());
-                            pat.setAge(Integer.parseInt(age.getText().toString().trim()));
+                                pat.setNIC(nic.getText().toString().trim());
+                                pat.setfName(fname.getText().toString().trim());
+                                pat.setlName(lname.getText().toString().trim());
+                                pat.setContNum(contNum.getText().toString().trim());
+                                pat.setAge(Integer.parseInt(age.getText().toString().trim()));
 
-                            pat.setNationality(nationality);
-                            pat.setSex(sex);
+                                pat.setNationality(nationality);
+                                pat.setSex(sex);
 
-                            ref = FirebaseDatabase.getInstance().getReference().child("Patient").child(uName);
-                            ref.setValue(pat);
+                                ref = FirebaseDatabase.getInstance().getReference().child("Patient").child(uName);
+                                ref.setValue(pat);
 
-                            customToastShow("Update Successful.");
-                            finish();
+                                customToastShow("Update Successful.");
+                                finish();
+                            }
 
                         }
                         catch (Exception e) {
@@ -155,6 +164,7 @@ public class PatientProfile extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void customToastShow(String message) {

@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.lifelinemadproject.lifelinehospital.Doctor.Doctor;
 import com.lifelinemadproject.lifelinehospital.Nurse.Nurse;
 import com.lifelinemadproject.lifelinehospital.Patient.Patient;
 
@@ -87,7 +88,7 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
                                 try {
                                     Patient patient = dataSnapshot.getValue(Patient.class);
                                     if (pWord.equals(patient.getPassword())) {
-                                        customToastShow("Login Successful.");
+                                        customToastShow("Successful.");
                                         openPatientMainUI();
                                     } else {
                                         customToastError("Invalid Credentials.");
@@ -106,7 +107,38 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
 
 
                     } else if (userTypeValue.equals("Doctor")) {
-                        openDoctorMainUI();
+
+                        ref = FirebaseDatabase.getInstance().getReference().child("Doctor");
+
+                        uName = username.getText().toString();
+                        pWord = password.getText().toString();
+
+
+                        ref.child(uName).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                try {
+                                    Doctor doctor = dataSnapshot.getValue(Doctor.class);
+                                    if (pWord.equals(doctor.getPassword())) {
+                                        customToastShow("Successful");
+                                        openDoctorMainUI();
+                                    } else {
+                                        customToastError("Invalid Password");
+                                    }
+                                } catch (NullPointerException e) {
+                                    customToastError("Doctor Record Not Found.");
+                                    clearControls();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+
                     }
 
 
@@ -179,6 +211,7 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
 
     private void openDoctorMainUI() {
         Intent intent = new Intent(LifeLineLogin.this,DoctorMainUI.class);
+        intent.putExtra(EXTRA_MESSAGE,uName);
         startActivity(intent);
     }
 

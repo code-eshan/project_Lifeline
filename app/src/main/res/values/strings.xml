@@ -80,6 +80,7 @@
     <string name="recProfile">Receptionist Profile</string>
     <string name="doctor_appointment">Appointments</string>
     <string name="doctorList">Doctors List</string>
+    <string name="logout">Logout</string>
 
 
 </resources>

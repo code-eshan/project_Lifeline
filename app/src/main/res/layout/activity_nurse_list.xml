@@ -11,7 +11,7 @@
         android:id="@+id/tvNurList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="108dp"
         android:layout_marginRight="108dp"
         android:fontFamily="@font/julius_sans_one"
@@ -22,17 +22,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvDisplayNurseList"
-        android:layout_width="207dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:text="Nurse List will be displayed here..."
-        android:textColor="@color/white"
-        android:textSize="25sp"
+    <ListView
+        android:id="@+id/listView"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNurList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNurList" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvNurList"
+        app:layout_constraintVertical_bias="0.338"></ListView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

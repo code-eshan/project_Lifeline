@@ -26,11 +26,11 @@ public class DoctorProfile extends AppCompatActivity {
 
     DatabaseReference ref;
 
-    EditText stf,nic,fname,lname,contNum,age;
+    EditText stf,nic,fname,lname,contNum;
 
     Doctor doctor;
 
-    String uName,nationality,sex,password;
+    String uName,password;
 
 
     @Override
@@ -38,8 +38,12 @@ public class DoctorProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_profile);
 
+        //username = (EditText)findViewById(R.id.etDocUsername);
+
         final Intent intent = getIntent();
-        uName = intent.getStringExtra(PatientMainUI.EXTRA_USERNAME);
+        uName = intent.getStringExtra(DoctorMainUI.EXTRA_USERNAME);
+        //username.setText(uName);
+
 
         doctor = new Doctor();
 
@@ -52,8 +56,6 @@ public class DoctorProfile extends AppCompatActivity {
 
         Button btnUpdateDoctor = (Button)findViewById(R.id.btnUpdateDoctor);
         Button btnDeleteDoctor = (Button)findViewById(R.id.btnDeleteDoctor);
-
-        ref = FirebaseDatabase.getInstance().getReference().child("Doctor");
 
         ref = FirebaseDatabase.getInstance().getReference().child("Doctor");
 
@@ -130,6 +132,7 @@ public class DoctorProfile extends AppCompatActivity {
                 delRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
 
                         if(dataSnapshot.hasChild(uName)) {
 
