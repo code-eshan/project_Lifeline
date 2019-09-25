@@ -113,7 +113,6 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
 
                     else if (userTypeValue.equals("Nurse")) {
 
-
                         ref = FirebaseDatabase.getInstance().getReference().child("Nurse");
 
                         uName = username.getText().toString();
@@ -129,7 +128,8 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
                                     if (pWord.equals(nurse.getPassword())) {
                                         customToastShow("Successful.");
                                         openNurseMainUI();
-                                    } else {
+                                    }
+                                    else {
                                         customToastError("Invalid Credentials.");
                                     }
                                 } catch (NullPointerException e) {

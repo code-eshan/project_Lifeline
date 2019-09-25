@@ -26,7 +26,7 @@ public class NurseProfile extends AppCompatActivity {
 
     DatabaseReference ref;
 
-    EditText sid,first,last,username,password;
+    EditText sid,first,last,nic,password;
 
     Nurse nur;
 
@@ -45,7 +45,7 @@ public class NurseProfile extends AppCompatActivity {
         sid = (EditText)findViewById(R.id.etNurStaffID);
         first = (EditText)findViewById(R.id.etNurFirstName);
         last = (EditText)findViewById(R.id.etNurLastName);
-        username = (EditText)findViewById(R.id.etNurUserName);
+        nic = (EditText)findViewById(R.id.etNurNic);
         password = (EditText)findViewById(R.id.etNurPassword);
 
         Button btnUpdateNurse = (Button)findViewById(R.id.btnUpdateNurse);
@@ -62,7 +62,8 @@ public class NurseProfile extends AppCompatActivity {
                     sid.setText(nurse.getSid());
                     first.setText(nurse.getfName());
                     last.setText(nurse.getlName());
-                    username.setText(nurse.getUserName());
+                    nic.setText(nurse.getNic());
+                   // username.setText(nurse.getUserName());
                     password.setText(nurse.getPassword());
 
                     //password = nur.getPassword();
@@ -93,14 +94,14 @@ public class NurseProfile extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         try {
-                                //This part
-                            nur.setUserName(uName);
-                          // nur.setPassword(password);
+                            //This part
+                            // nur.setUserName(uName);
+                            // nur.setPassword(password);
 
                             nur.setSid(sid.getText().toString().trim());
                             nur.setfName(first.getText().toString().trim());
                             nur.setlName(last.getText().toString().trim());
-                            nur.setUserName(username.getText().toString().trim());
+                            nur.setNic(nic.getText().toString().trim());
                             nur.setPassword(password.getText().toString().trim());
 
 

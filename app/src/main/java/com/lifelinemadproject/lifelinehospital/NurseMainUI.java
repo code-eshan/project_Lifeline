@@ -25,9 +25,6 @@ public class NurseMainUI extends AppCompatActivity {
         Intent intent = getIntent();
         uName = intent.getStringExtra(LifeLineLogin.EXTRA_MESSAGE);
 
-
-
-
         welcomeUser = (TextView)findViewById(R.id.tvNurUserNAME);
         welcomeUser.setText(uName);
 
@@ -61,5 +58,6 @@ public class NurseMainUI extends AppCompatActivity {
         //intent.putExtra(EXTRA_USERNAME,uName);
         intent.putExtra(EXTRA_USERNAME,uName);
         startActivity(intent);
+
     }
 }

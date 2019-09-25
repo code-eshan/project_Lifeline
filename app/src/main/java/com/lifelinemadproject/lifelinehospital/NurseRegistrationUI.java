@@ -21,7 +21,7 @@ import com.lifelinemadproject.lifelinehospital.Nurse.Nurse;
 public class NurseRegistrationUI extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     //DECLARING FIELDS
-    EditText sid,first,last,username,password;
+    EditText sid,first,last,nic,username,password;
 
     Button btnNurReg;
 
@@ -32,6 +32,8 @@ public class NurseRegistrationUI extends AppCompatActivity implements AdapterVie
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nurse_registration_ui);
 
@@ -39,25 +41,12 @@ public class NurseRegistrationUI extends AppCompatActivity implements AdapterVie
         sid = (EditText)findViewById(R.id.etNurStaffID);
         first = (EditText)findViewById(R.id.etNurFirstName);
         last = (EditText)findViewById(R.id.etNurLastName);
-        username = (EditText)findViewById(R.id.etNurUserName);
+        nic = (EditText) findViewById(R.id.etNurNic);
+        username = (EditText)findViewById(R.id.etNurUsername);
         password = (EditText)findViewById(R.id.etNurPassword);
 
 
-        //NATIONALITY SPINNER
-      //  nationality = (Spinner)findViewById(R.id.spPatNationality);
-        //ArrayAdapter<CharSequence> Nadapter = ArrayAdapter.createFromResource(this,R.array.nationality,android.R.layout.simple_spinner_item);
-      //  Nadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-      //  nationality.setAdapter(Nadapter);
 
-      //  nationality.setOnItemSelectedListener(this);
-
-        //SEX SPINNER
-      //  sex = (Spinner)findViewById(R.id.spPatSex);
-      //  ArrayAdapter<CharSequence> Sadapter = ArrayAdapter.createFromResource(this,R.array.sex,android.R.layout.simple_spinner_item);
-       // Sadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-       // sex.setAdapter(Sadapter);
-
-       // sex.setOnItemSelectedListener(this);
 
         btnNurReg = (Button)findViewById(R.id.btnRegisterNurse);
 
@@ -65,34 +54,35 @@ public class NurseRegistrationUI extends AppCompatActivity implements AdapterVie
         Nurse = new Nurse();
 
         dbRef = FirebaseDatabase.getInstance().getReference().child("Nurse");
-
+        //Validating ALL THE USER INPUT FIELDS NOT TO BE NULL
         btnNurReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(TextUtils.isEmpty(sid.getText().toString()) || TextUtils.isEmpty(first.getText().toString().trim())
-                        || TextUtils.isEmpty(last.getText().toString()) || TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString())
+                if(TextUtils.isEmpty(sid.getText().toString())
+                        || TextUtils.isEmpty(first.getText().toString().trim())
+                        || TextUtils.isEmpty(last.getText().toString())
+                        || TextUtils.isEmpty(nic.getText().toString())
+                        || TextUtils.isEmpty(username.getText().toString())
+                        || TextUtils.isEmpty(password.getText().toString())
                         )
                 {
                     customToastUserTypeError("Please fill all the fields.");
                 }
                 else {
-
                     try {
                         Nurse.setSid(sid.getText().toString().trim());
                         Nurse.setfName(first.getText().toString().trim());
                         Nurse.setlName(last.getText().toString().trim());
+                        Nurse.setNic(nic.getText().toString().trim());
                         Nurse.setUserName(username.getText().toString().trim());
                         Nurse.setPassword(password.getText().toString().trim());
-
 
                         //INSERT INTO DATABASE - NORMAL METHOD
                         //dbRef.push().setValue(Nurse);
 
-                        //ASSIGNING THE USERNAME AND NIC NUMBER AS THE KEY
                         key = username.getText().toString().trim();
                         //INSERT INTO DATABASE - WITH AUTO INCREMENT
                         dbRef.child(key).setValue(Nurse);
-
                         customToastShow();
                         goBackLogin();
 
