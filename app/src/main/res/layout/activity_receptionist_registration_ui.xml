@@ -74,7 +74,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/tvRecLastName"
+                android:id="@+id/tvRecContact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -84,6 +84,46 @@
 
             <EditText
                 android:id="@+id/etRecLastName"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edit_round"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingLeft="5dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvRecLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/contNum"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/etRecContactNumber"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edit_round"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:paddingLeft="5dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvRecAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/age"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/etRecAge"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
                 android:layout_marginBottom="20dp"

@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.lifelinemadproject.lifelinehospital.Doctor.Doctor;
 import com.lifelinemadproject.lifelinehospital.Nurse.Nurse;
 import com.lifelinemadproject.lifelinehospital.Patient.Patient;
+import com.lifelinemadproject.lifelinehospital.Receptionist.Receptionist;
 
 import static com.lifelinemadproject.lifelinehospital.PatientMainUI.EXTRA_USERNAME;
 
@@ -181,7 +182,37 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
 
 
                     else if (userTypeValue.equals("Receptionist")) {
-                        openReceptionistUI();
+
+                        ref = FirebaseDatabase.getInstance().getReference().child("Receptionist");
+
+                        uName = username.getText().toString();
+                        pWord = password.getText().toString();
+
+                        ref.child(uName).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                try{
+                                    Receptionist receptionist =dataSnapshot.getValue(Receptionist.class);
+                                    if(pWord.equals(receptionist.getPassword())){
+                                        customToastShow("Successful.");
+                                        openReceptionistUI();
+                                    }else{
+                                        customToastError("Invalid credentials");
+                                        }
+                                }
+                                catch(NullPointerException e){
+                                    customToastError("Receptionist Record not Found.");
+                                    clearControls();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
                     }
                 }
 

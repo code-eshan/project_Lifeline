@@ -8,6 +8,8 @@ public class Receptionist {
     private String lName;
     private String userName;
     private String password;
+    private Integer age;
+    private String contNum;
 
     public Receptionist() {
     }
@@ -16,8 +18,8 @@ public class Receptionist {
         return sID;
     }
 
-    public void setNIC(String NIC) {
-        this.sID = NIC;
+    public void setsID(String sID) {
+        this.sID = sID;
     }
 
     public String getfName() {
@@ -52,5 +54,21 @@ public class Receptionist {
         this.password = password;
     }
 
+    public Integer getAge() {
+        return age;
+    }
 
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getContNum() {
+        return contNum;
+    }
+
+    public void setContNum(String contNum) {
+        this.contNum = contNum;
+    }
 }
+
+

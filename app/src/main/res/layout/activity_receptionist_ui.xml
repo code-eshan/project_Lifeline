@@ -8,25 +8,51 @@
     tools:context=".ReceptionistUI">
 
     <TextView
-        android:id="@+id/tvRecWelcomeUser"
+        android:id="@+id/tvPatWelcomeUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
         android:layout_marginTop="124dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:fontFamily="@font/julius_sans_one"
-        android:text="Welcome Receptionist"
+        android:text="@string/welcomePatient"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="35sp"
         app:fontFamily="@font/julius_sans_one"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRecUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:fontFamily="@font/julius_sans_one"
+        android:text="@string/username"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:fontFamily="@font/julius_sans_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPatWelcomeUser" />
 
     <Button
         android:id="@+id/btnRecProfile"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
         android:background="@drawable/button_round"
@@ -40,13 +66,16 @@
         android:textAllCaps="true"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRecWelcomeUser" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRecUsername" />
 
     <Button
         android:id="@+id/btnRecViewAppointments"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="68dp"
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
         android:background="@drawable/button_round"
@@ -60,15 +89,20 @@
         android:textAllCaps="true"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRecProfile" />
 
     <Button
         android:id="@+id/btnRecViewDoctors"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
+        android:layout_marginBottom="56dp"
         android:background="@drawable/button_round"
         android:backgroundTint="#18648D"
         android:drawableLeft="@drawable/doctor"
@@ -79,8 +113,11 @@
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRecProfile" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRecViewAppointments" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
