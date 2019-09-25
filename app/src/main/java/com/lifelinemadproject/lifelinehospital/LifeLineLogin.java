@@ -232,6 +232,7 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
 
     private void openReceptionistUI(){
         Intent intent = new Intent(LifeLineLogin.this,ReceptionistUI.class);
+        intent.putExtra(EXTRA_MESSAGE,uName);
         startActivity(intent);
     }
     private void openNurseMainUI() {
