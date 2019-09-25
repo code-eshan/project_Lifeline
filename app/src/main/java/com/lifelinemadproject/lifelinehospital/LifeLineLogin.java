@@ -121,13 +121,13 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
                                 try {
                                     Doctor doctor = dataSnapshot.getValue(Doctor.class);
                                     if (pWord.equals(doctor.getPassword())) {
-                                        customToastShow("Successful.");
+                                        customToastShow("Successful");
                                         openDoctorMainUI();
                                     } else {
-                                        customToastError("Invalid Credentials.");
+                                        customToastError("Invalid Password");
                                     }
                                 } catch (NullPointerException e) {
-                                    customToastError("Nurse Record Not Found.");
+                                    customToastError("Doctor Record Not Found.");
                                     clearControls();
                                 }
                             }
