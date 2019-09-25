@@ -59,15 +59,7 @@ public class DoctorRegistrationUI extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //NURSELIST
-                Intent intent =new Intent(DoctorRegistrationUI.this,NurseList.class);
-                startActivity(intent);
-                //END
 
-                //Appointment list
-                Intent intentn = new Intent(DoctorRegistrationUI.this,DocAppointmentList.class);
-                startActivity(intentn);
-                //end
 
                 if(TextUtils.isEmpty(stf.getText().toString()) || TextUtils.isEmpty(nic.getText().toString()) || TextUtils.isEmpty(first.getText().toString().trim())
                         || TextUtils.isEmpty(last.getText().toString()) || TextUtils.isEmpty(contNum.getText().toString())

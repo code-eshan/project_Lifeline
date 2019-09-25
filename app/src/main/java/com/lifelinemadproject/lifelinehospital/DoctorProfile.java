@@ -133,6 +133,7 @@ public class DoctorProfile extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+
                         if(dataSnapshot.hasChild(uName)) {
 
                             ref = FirebaseDatabase.getInstance().getReference().child("Doctor").child(uName);

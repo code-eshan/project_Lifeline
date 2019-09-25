@@ -7,12 +7,23 @@ public class Nurse {
     private String sid;
     private String fName;
     private String lName;
+    private String Nic;
     private String userName;
     private String password;
 
-
     public Nurse() {
     }
+
+    public Nurse(String sid, String fName, String lName, String nic, String userName, String password) {
+        this.sid = sid;
+        this.fName = fName;
+        this.lName = lName;
+        Nic = nic;
+        this.userName = userName;
+        this.password = password;
+    }
+
+
 
     public String getSid() {
         return sid;
@@ -28,6 +39,14 @@ public class Nurse {
 
     public void setfName(String fName) {
         this.fName = fName;
+    }
+
+    public String getNic() {
+        return Nic;
+    }
+
+    public void setNic(String Nic) {
+        this.Nic = Nic;
     }
 
     public String getlName() {
