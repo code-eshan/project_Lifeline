@@ -94,10 +94,7 @@ public class NurseProfile extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         try {
-                            //This part
-                            // nur.setUserName(uName);
-                            // nur.setPassword(password);
-
+                            nur.setUserName(uName);
                             nur.setSid(sid.getText().toString().trim());
                             nur.setfName(first.getText().toString().trim());
                             nur.setlName(last.getText().toString().trim());

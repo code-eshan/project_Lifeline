@@ -102,7 +102,7 @@ public class PatientRegistrationUI extends AppCompatActivity implements AdapterV
                             //INSERT INTO DATABASE - WITH AUTO INCREMENT
                             dbRef.child(key).setValue(patient);
 
-                            customToastShow();
+                            customToastShow("Patient Registered Successfully");
                             goBackLogin();
 
                         }
@@ -132,11 +132,11 @@ public class PatientRegistrationUI extends AppCompatActivity implements AdapterV
         startActivity(intent);
     }
 
-    private void customToastShow() {
+    private void customToastShow(String message) {
         Toast toast = new Toast(getApplicationContext());
         View view = LayoutInflater.from(this).inflate(R.layout.toast_layout,null);
         TextView toastTextView  = view.findViewById(R.id.textViewToast);
-        toastTextView.setText("Patient Registered Successfully");
+        toastTextView.setText(message);
         toast.setView(view);
         toast.setGravity(Gravity.CENTER,0,0);
         toast.show();

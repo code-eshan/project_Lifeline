@@ -111,7 +111,7 @@ public class ReceptionistRegistrationUI extends AppCompatActivity  {
         Toast toast = new Toast(getApplicationContext());
         View view = LayoutInflater.from(this).inflate(R.layout.toast_layout,null);
         TextView toastTextView  = view.findViewById(R.id.textViewToast);
-        toastTextView.setText("Patient Registered Successfully");
+        toastTextView.setText("Receptionist Registered Successfully");
         toast.setView(view);
         toast.setGravity(Gravity.CENTER,0,0);
         toast.show();

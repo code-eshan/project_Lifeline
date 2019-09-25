@@ -92,7 +92,7 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
                                         customToastShow("Successful.");
                                         openPatientMainUI();
                                     } else {
-                                        customToastError("Invalid Credentials.");
+                                        customToastError("Invalid Password");
                                     }
                                 } catch (NullPointerException e) {
                                     customToastError("Patient Record Not Found.");
@@ -163,7 +163,7 @@ public class LifeLineLogin extends AppCompatActivity implements AdapterView.OnIt
                                         openNurseMainUI();
                                     }
                                     else {
-                                        customToastError("Invalid Credentials.");
+
                                     }
                                 } catch (NullPointerException e) {
                                     customToastError("Nurse Record Not Found.");
